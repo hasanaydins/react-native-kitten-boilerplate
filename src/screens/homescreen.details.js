@@ -7,7 +7,7 @@ import {
   TopNavigation,
   TopNavigationAction,
 } from '@ui-kitten/components';
-import Box from '../components/base_components/Box';
+import View from '../components/base_components/View';
 import Text from '../components/base_components/Text';
 import Button from '../components/base_components/Button';
 
@@ -42,11 +42,10 @@ export const DetailsScreen = ({navigation}) => {
         leftControl={BackAction()}
       />
       <Divider />
-      <Box style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Poppins abcdefs</Text>
-
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Poppins abcdfefs</Text>
         <Button>Sign Up</Button>
-      </Box>
+      </View>
     </SafeAreaView>
   );
 };

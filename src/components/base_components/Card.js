@@ -1,4 +1,4 @@
-import {Layout as View} from '@ui-kitten/components';
+import {Card as C} from '@ui-kitten/components';
 import styled from 'styled-components';
 import {
   compose,
@@ -11,7 +11,7 @@ import {
   shadow,
 } from 'styled-system';
 
-const Box = styled(View)(
+const Card = styled(C)(
   compose(
     color,
     size,
@@ -23,4 +23,4 @@ const Box = styled(View)(
   ),
 );
 
-export default Box;
+export default Card;

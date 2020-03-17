@@ -1,11 +1,11 @@
 import React from 'react';
 import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
-import {mapping, light, dark} from '@eva-design/eva';
 import {AppNavigator} from './navigation/navigation.component';
+import {default as customMapping} from '../custom-mapping.json'; // <-- Import custom mapping
 import {ThemeContext} from '../theme-context';
 import * as eva from '@eva-design/eva';
-import {default as customMapping} from '../custom-mapping.json'; // <-- Import custom mapping
+import {mapping, light, dark} from '@eva-design/eva';
 
 const themes = {light, dark};
 
