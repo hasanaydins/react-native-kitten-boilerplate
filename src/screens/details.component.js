@@ -33,7 +33,7 @@ export const DetailsScreen = ({navigation}) => {
       }}>
       <StatusBar
         barStyle={currentTheme === 'light' ? 'dark-content' : 'light-content'}
-        backgroundColor="#A000D8"
+        backgroundColor={currentTheme === 'light' ? 'white' : '#222B45'}
       />
       <TopNavigation
         title="MyApp"

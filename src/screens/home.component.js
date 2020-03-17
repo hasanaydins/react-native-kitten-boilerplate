@@ -21,7 +21,7 @@ export const HomeScreen = ({navigation}) => {
       }}>
       <StatusBar
         barStyle={currentTheme === 'light' ? 'dark-content' : 'light-content'}
-        backgroundColor="#A000D8"
+        backgroundColor={currentTheme === 'light' ? 'white' : '#222B45'}
       />
       <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Button style={{marginVertical: 4}} onPress={navigateDetails}>
