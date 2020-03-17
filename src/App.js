@@ -5,6 +5,7 @@ import {mapping, light, dark} from '@eva-design/eva';
 import {AppNavigator} from './navigation/navigation.component';
 import {ThemeContext} from '../theme-context';
 import * as eva from '@eva-design/eva';
+import {default as customMapping} from '../custom-mapping.json'; // <-- Import custom mapping
 
 const themes = {light, dark};
 
@@ -21,7 +22,11 @@ const App = () => {
     <React.Fragment>
       <IconRegistry icons={EvaIconsPack} />
       <ThemeContext.Provider value={{theme, toggleTheme}}>
-        <ApplicationProvider {...eva} mapping={mapping} theme={currentTheme}>
+        <ApplicationProvider
+          {...eva}
+          mapping={mapping}
+          theme={currentTheme}
+          customMapping={customMapping}>
           <AppNavigator />
         </ApplicationProvider>
       </ThemeContext.Provider>

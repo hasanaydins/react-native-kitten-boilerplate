@@ -25,10 +25,10 @@ export const HomeScreen = ({navigation}) => {
       />
       <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Button style={{marginVertical: 4}} onPress={navigateDetails}>
-          OPEN DETAILS
+          Open details
         </Button>
         <Button style={{marginVertical: 4}} onPress={themeContext.toggleTheme}>
-          TOGGLE THEME
+          Toggle theemas
         </Button>
       </Layout>
     </SafeAreaView>

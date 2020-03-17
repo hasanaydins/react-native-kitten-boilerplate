@@ -4,11 +4,12 @@ import {ThemeContext} from '../../theme-context';
 import {
   Divider,
   Icon,
-  Layout,
-  Text,
   TopNavigation,
   TopNavigationAction,
 } from '@ui-kitten/components';
+import Box from '../components/base_components/Box';
+import Text from '../components/base_components/Text';
+import Button from '../components/base_components/Button';
 
 const BackIcon = style => <Icon {...style} name="arrow-back" />;
 
@@ -41,9 +42,11 @@ export const DetailsScreen = ({navigation}) => {
         leftControl={BackAction()}
       />
       <Divider />
-      <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text category="h1">Poppins</Text>
-      </Layout>
+      <Box style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Poppins abcdefs</Text>
+
+        <Button>Sign Up</Button>
+      </Box>
     </SafeAreaView>
   );
 };
