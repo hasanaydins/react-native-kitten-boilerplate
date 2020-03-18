@@ -4,13 +4,13 @@ import {ThemeContext} from '../../theme-context';
 import SafeAreaView from 'react-native-safe-area-view';
 import {TopNavigation, TopNavigationAction, Icon} from '@ui-kitten/components';
 import {DrawerActions} from '@react-navigation/native';
-import View from '../components/base_components/View';
-import Text from '../components/base_components/Text';
-import Button from '../components/base_components/Button';
+import View from '../components/base/View';
+import Text from '../components/base/Text';
+import Button from '../components/base/Button';
 
 const BackIcon = style => <Icon {...style} name="menu" />;
 
-export const HomescreenTab = ({navigation}) => {
+export const Homescreen = ({navigation}) => {
   const themeContext = React.useContext(ThemeContext);
   const currentTheme = themeContext.theme;
 

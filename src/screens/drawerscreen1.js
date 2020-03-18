@@ -6,9 +6,8 @@ import {
 } from '@ui-kitten/components';
 import SafeAreaView from 'react-native-safe-area-view';
 import {StatusBar} from 'react-native';
-import View from '../components/base_components/View';
-import Text from '../components/base_components/Text';
-import Button from '../components/base_components/Button';
+import View from '../components/base/View';
+import Text from '../components/base/Text';
 import React from 'react';
 import {ThemeContext} from '../../theme-context';
 
@@ -27,8 +26,8 @@ export const LibrariesScreen = ({navigation}) => {
   );
   return (
     <SafeAreaView
-      flex={1}
       style={{
+        flex: 1,
         backgroundColor: currentTheme === 'light' ? '#FFFFFF' : '#222B45',
       }}>
       <StatusBar
@@ -36,13 +35,13 @@ export const LibrariesScreen = ({navigation}) => {
         backgroundColor={currentTheme === 'light' ? 'white' : '#222B45'}
       />
       <TopNavigation
-        title="Libraries"
+        title="Drawer1"
         alignment="center"
         leftControl={BackAction()}
       />
       <Divider />
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Libraries screen in drawer</Text>
+        <Text>Drawer screen 1</Text>
       </View>
     </SafeAreaView>
   );

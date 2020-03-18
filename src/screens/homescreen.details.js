@@ -7,15 +7,13 @@ import {
   TopNavigation,
   TopNavigationAction,
 } from '@ui-kitten/components';
-import View from '../components/base_components/View';
-import Text from '../components/base_components/Text';
-import Button from '../components/base_components/Button';
+import View from '../components/base/View';
+import Text from '../components/base/Text';
 
 const BackIcon = style => <Icon {...style} name="arrow-back" />;
 
 export const DetailsScreen = ({navigation}) => {
   const themeContext = React.useContext(ThemeContext);
-
   const currentTheme = themeContext.theme;
 
   const navigateBack = () => {

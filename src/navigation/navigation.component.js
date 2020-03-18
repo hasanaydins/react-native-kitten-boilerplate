@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomescreenTab} from '../screens/homescreen.tab';
+import {Homescreen} from '../screens/homescreen';
 import {DetailsScreen} from '../screens/homescreen.details';
-import ProfilscreenTab from '../screens/profilscreen.tab';
+import Profilscreen from '../screens/profilscreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
@@ -12,15 +12,13 @@ import {
   Icon,
 } from '@ui-kitten/components';
 import SafeAreaView from 'react-native-safe-area-view';
-import {LibrariesScreen} from '../screens/libraries.indrawer';
+import {LibrariesScreen} from '../screens/drawerscreen1';
 import {ThemeContext} from '../../theme-context';
-import NotificationsScreenTab from '../screens/notificationsscreen.tab';
+import NotificationscreenTab from '../screens/notificationscreen.tab';
+import {HomeDrawer} from './home.drawer.components';
 
 const PersonIcon = style => <Icon {...style} name="person-outline" />;
-
 const BellIcon = style => <Icon {...style} name="bell-outline" />;
-
-const EmailIcon = style => <Icon {...style} name="email-outline" />;
 
 // baslangıc root navigatorü drawerla calıstır ve taba bagla
 export const AppNavigator = () => (
@@ -31,21 +29,26 @@ export const AppNavigator = () => (
 
 // ilk taba ana sayfayı bagla ve tab navigatoru baslat
 const Drawer = createDrawerNavigator();
-export const RootNavigator = (): React.ReactElement => (
-  <Drawer.Navigator screenOptions={{gestureEnabled: true}}>
-    <Drawer.Screen name="Home" component={TabNavigator} />
-    <Drawer.Screen name="Libraries" component={LibrariesScreen} />
-    {/* drawerdaki 2.menu */}
-  </Drawer.Navigator>
-);
+export const RootNavigator = ({navigation, state}) => {
+  return (
+    <Drawer.Navigator
+      screenOptions={{gestureEnabled: true}}
+      drawerType="slide"
+      drawerContent={props => <HomeDrawer {...props} />}>
+      <Drawer.Screen name="Home" component={TabNavigator} />
+      {/* drawerdaki 2.menu */}
+      <Drawer.Screen name="Drawer1" component={LibrariesScreen} />
+    </Drawer.Navigator>
+  );
+};
 
 // bottomtabdaki screenler
 const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => (
   <BottomTab.Navigator tabBar={props => <BottomTabBar {...props} />}>
     <BottomTab.Screen name="Home" component={HomeNavigator} />
-    <BottomTab.Screen name="Notifications" component={NotificationsScreenTab} />
-    <BottomTab.Screen name="Profil" component={ProfilscreenTab} />
+    <BottomTab.Screen name="Notifications" component={NotificationscreenTab} />
+    <BottomTab.Screen name="Profil" component={Profilscreen} />
   </BottomTab.Navigator>
 );
 
@@ -54,7 +57,6 @@ const BottomTabBar = ({navigation, state}) => {
   const onSelect = index => {
     navigation.navigate(state.routeNames[index]);
   };
-
   const themeContext = React.useContext(ThemeContext);
   const currentTheme = themeContext.theme;
 
@@ -91,7 +93,7 @@ const BottomTabBar = ({navigation, state}) => {
 const Stack = createStackNavigator();
 const HomeNavigator = () => (
   <Stack.Navigator headerMode="none">
-    <Stack.Screen name="Home" component={HomescreenTab} />
+    <Stack.Screen name="Home" component={Homescreen} />
     <Stack.Screen name="HomeDetail" component={DetailsScreen} />
   </Stack.Navigator>
 );
