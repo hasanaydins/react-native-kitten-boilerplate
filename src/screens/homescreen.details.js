@@ -37,14 +37,13 @@ export const DetailsScreen = ({navigation}) => {
         backgroundColor={currentTheme === 'light' ? 'white' : '#222B45'}
       />
       <TopNavigation
-        title="MyApp"
+        title="Detail"
         alignment="center"
         leftControl={BackAction()}
       />
       <Divider />
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Poppins abcdfefs</Text>
-        <Button>Sign Up</Button>
+        <Text>Homescreen Detail</Text>
       </View>
     </SafeAreaView>
   );

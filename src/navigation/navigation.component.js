@@ -1,42 +1,46 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreen} from '../screens/homescreen';
+import {HomescreenTab} from '../screens/homescreen.tab';
 import {DetailsScreen} from '../screens/homescreen.details';
-import ProfilScreen from '../screens/profilscreen';
-
+import ProfilscreenTab from '../screens/profilscreen.tab';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigation, BottomNavigationTab} from '@ui-kitten/components';
 import {SafeAreaView} from 'react-native';
+import {LibrariesScreen} from '../screens/libraries.indrawer';
 
+// baslangıc root navigatorü drawerla calıstır ve taba bagla
 export const AppNavigator = () => (
   <NavigationContainer>
-    <TabNavigator />
+    <RootNavigator />
   </NavigationContainer>
 );
-const BottomTab = createBottomTabNavigator();
 
+// ilk taba ana sayfayı bagla ve tab navigatoru baslat
+const Drawer = createDrawerNavigator();
+export const RootNavigator = (): React.ReactElement => (
+  <Drawer.Navigator screenOptions={{gestureEnabled: true}}>
+    <Drawer.Screen name="Home" component={TabNavigator} />
+    <Drawer.Screen name="Libraries" component={LibrariesScreen} />
+    {/* drawerdaki 2.menu */}
+  </Drawer.Navigator>
+);
+
+// bottomtabdaki screenler
+const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => (
   <BottomTab.Navigator tabBar={props => <BottomTabBar {...props} />}>
     <BottomTab.Screen name="Home" component={HomeNavigator} />
-    <BottomTab.Screen name="Profil" component={ProfilScreen} />
+    <BottomTab.Screen name="Profil" component={ProfilscreenTab} />
   </BottomTab.Navigator>
 );
 
-const Stack = createStackNavigator();
-
-const HomeNavigator = () => (
-  <Stack.Navigator headerMode="none">
-    <Stack.Screen name="Home" component={HomeScreen} />
-    <Stack.Screen name="Details" component={DetailsScreen} />
-  </Stack.Navigator>
-);
-
+// bottomtabda yazılacaklar
 const BottomTabBar = ({navigation, state}) => {
   const onSelect = index => {
     navigation.navigate(state.routeNames[index]);
   };
-
   return (
     <SafeAreaView>
       <BottomNavigation selectedIndex={state.index} onSelect={onSelect}>
@@ -46,3 +50,12 @@ const BottomTabBar = ({navigation, state}) => {
     </SafeAreaView>
   );
 };
+
+// anasayfa stacki ve onun detayı
+const Stack = createStackNavigator();
+const HomeNavigator = () => (
+  <Stack.Navigator headerMode="none">
+    <Stack.Screen name="Home" component={HomescreenTab} />
+    <Stack.Screen name="HomeDetail" component={DetailsScreen} />
+  </Stack.Navigator>
+);
