@@ -36,7 +36,10 @@ export const HomescreenTab = ({navigation}) => {
       <View flex={1} alignItems="center" justifyContent="center">
         <Text>This is Homescreen</Text>
         <Button onPress={() => navigation.navigate('HomeDetail')}>
-          Go to homescreen details
+          Go to Detail
+        </Button>
+        <Button style={{marginVertical: 4}} onPress={themeContext.toggleTheme}>
+          Toggle Theme
         </Button>
       </View>
     </SafeAreaView>

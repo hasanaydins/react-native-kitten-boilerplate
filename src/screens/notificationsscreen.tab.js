@@ -1,12 +1,11 @@
 import React from 'react';
 import Text from '../components/base_components/Text';
-import Button from '../components/base_components/Button';
 import View from '../components/base_components/View';
 
-const ProfilscreenTab = () => (
+const NotificationsScreenTab = () => (
   <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text category="h1">Profil Screen Tab</Text>
+    <Text category="h4">Notifications Screen Tab</Text>
   </View>
 );
 
-export default ProfilscreenTab;
+export default NotificationsScreenTab;

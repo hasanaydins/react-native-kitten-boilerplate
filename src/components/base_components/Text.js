@@ -22,7 +22,7 @@ const Text = styled(T)(
 );
 
 Text.defaultProps = {
-  fontFamily: 'Poppins',
+  fontFamily: 'Poppins-Regular',
 };
 
 export default Text;
