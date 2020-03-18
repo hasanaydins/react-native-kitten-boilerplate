@@ -14,7 +14,7 @@ import {
 import SafeAreaView from 'react-native-safe-area-view';
 import {LibrariesScreen} from '../screens/drawerscreen1';
 import {ThemeContext} from '../../theme-context';
-import NotificationscreenTab from '../screens/notificationscreen.tab';
+import Notificationscreen from '../screens/notificationscreen';
 import {HomeDrawer} from './home.drawer.components';
 
 const PersonIcon = style => <Icon {...style} name="person-outline" />;
@@ -47,7 +47,7 @@ const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => (
   <BottomTab.Navigator tabBar={props => <BottomTabBar {...props} />}>
     <BottomTab.Screen name="Home" component={HomeNavigator} />
-    <BottomTab.Screen name="Notifications" component={NotificationscreenTab} />
+    <BottomTab.Screen name="Notifications" component={Notificationscreen} />
     <BottomTab.Screen name="Profil" component={Profilscreen} />
   </BottomTab.Navigator>
 );

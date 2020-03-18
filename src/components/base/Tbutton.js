@@ -9,7 +9,6 @@ import {
   flexbox,
   layout,
   borderRadius,
-  variant,
 } from 'styled-system';
 
 const Tbutton = styled(TO)(
