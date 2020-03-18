@@ -1,5 +1,5 @@
 # 🚀 React Native Starter Kit 
-<img src="ss/demoui.gif" height="400" />
+<img src="ss/demoui.gif" height="500" />
 
 ## Kullanılan Kütüphaneler
 
@@ -18,7 +18,8 @@ Ekstra Özellikler:
 ## Dizin Yapısı
 
    
-   ![folder Structure]( ss/structure.png "Folder Structure")
+   <img src="ss/structure.png" height="400" />
+
 
 ## 🚀 Yükleme
 
